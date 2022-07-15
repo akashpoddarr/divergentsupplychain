@@ -13,6 +13,7 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -26,9 +27,7 @@
   </head>
 
   <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
+    <noscript> You need to enable JavaScript to run this app. </noscript>
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -40,6 +39,34 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <script>
+      $("#start").click(function () {
+        $(this).toggleClass("started");
+        $(this).toggleClass("stopped");
+        if ($(this).hasClass("started")) {
+          $(this)
+            .find("span")
+            .fadeOut(250, function () {
+              $(this)
+                .siblings("div")
+                .fadeIn(250, function () {
+                  $(this)
+                    .find(".started-at")
+                    .text("Continued on " + new Date().toDateString());
+                });
+            });
+        } else
+          $(this)
+            .find("div")
+            .fadeOut(250, function () {
+              $(this).siblings("span").fadeIn();
+            });
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.6.3/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.6.3/umd/react-dom.production.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
   </body>
 </html>

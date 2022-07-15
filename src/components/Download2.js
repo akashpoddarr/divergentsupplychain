@@ -4,6 +4,7 @@ import { Row, Container } from "react-bootstrap";
 function Download2() {
   return (
     <section id="download">
+    
       <Container>
         <Row>
           <div className="section-text">

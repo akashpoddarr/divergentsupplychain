@@ -1,8 +1,11 @@
 import React from "react";
+import Particle from "./Particles";
 
 function Services() {
   return (
     <section id="services">
+    <Particle />
+    <div className="App-header">
       <div className="section-text">
         <div className="section-text__title-centered">
           Divergent makes traceability implementations simple, fast, and secure
@@ -44,6 +47,7 @@ function Services() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
